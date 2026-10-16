@@ -28,7 +28,7 @@ enableEmoji = true
 
   # Home page header (like Lil'Log's welcome block)
   [params.homeInfoParams]
-    Title = "Hi there 👋"
+    Title = "Hi there"
     Content = "Welcome to my blog — a place where I document my learning notes on machine learning, computer vision, robotics, GPU programming, and other technical topics."
 
   [[params.socialIcons]]
@@ -80,7 +80,7 @@ enableEmoji = true
     [markup.goldmark.renderer]
       unsafe = false
     [markup.goldmark.extensions.passthrough]
-      enabled = true
+      enable = true
       [markup.goldmark.extensions.passthrough.delimiters]
         block = [['\[', '\]'], ['$$', '$$']]
         inline = [['\(', '\)']]
