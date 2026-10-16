@@ -1,0 +1,91 @@
+# Site configuration — YGGYatsso blog (Hugo + PaperMod)
+baseURL = "https://yggyatsso.github.io/"
+locale = "en-US"
+title = "YGGYatsso"
+theme = "PaperMod"
+paginate = 10
+enableEmoji = true
+
+# Taxonomies are used by the Categories / Tags sections
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  comments = false
+  hideMeta = false
+  hideSummary = false
+  ShowWordCount = false
+  useHLJS = true
+
+  # Home page header (like Lil'Log's welcome block)
+  [params.homeInfoParams]
+    Title = "Hi there 👋"
+    Content = "Welcome to my blog — a place where I document my learning notes on machine learning, computer vision, robotics, GPU programming, and other technical topics."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/YGGYatsso"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[params.editPost]
+  # Disabled until you want readers to propose edits
+  disabled = true
+
+# Main menu (top of the page, like Lil'Log)
+[menu]
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
+    weight = 5
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 15
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 25
+
+# Search (Fuse.js) needs a JSON output on the home page
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+    [markup.goldmark.extensions.passthrough]
+      enabled = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = "monokai"
